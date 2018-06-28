@@ -1,7 +1,8 @@
-FROM python:3
+FROM alpine:3.6
 
-WORKDIR /usr/src/app
+COPY . /app
+WORKDIR /app
 
-COPY . .
+RUN apk add --no-cache python3
 
-CMD [ "python", "./pony_ea.py" ]
+CMD [ "python3", "./pony_ea.py" ]
